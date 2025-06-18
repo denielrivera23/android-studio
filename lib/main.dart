@@ -9,7 +9,7 @@ void main() {
       ),
       body: Center(
         child: Column(
-          mainAxisSize: MainAxisSize.min,  // Ensures Column takes minimum space needed
+          mainAxisSize: MainAxisSize.min, 
           children: [
             Text('Chris Deniel'),
             Text('Apacible'),

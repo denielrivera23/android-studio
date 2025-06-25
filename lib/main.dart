@@ -1,104 +1,162 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text('BIKE PARTS'),
-        backgroundColor: Color.fromARGB(255, 247, 86, 86),
-      ),
-      body: Column(
-      
-        children: [
-          
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.red,
-            child:Row(
-              children: [
-                Text('Name:',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 118, 208, 33),
-                  fontSize: 20,
-                ),
-                ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-            child:(
-              Text('Deniel Rivera',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 253, 252, 252),
-                fontSize: 20,
-              ),
-              )
-            )
-          )
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 50, vertical: 50),
-            color: Color.fromARGB(255, 0, 255, 0),
-            child:Row(
-              children: [
-                Text('Age:',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 228, 64, 64),
-                  fontSize: 20,
-                ),
-                ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-            child:(
-              Text('21 years old',
-               style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 253, 252, 252),
-                fontSize: 20,
-              ),
-              
-              )
-            )
-          )
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(35, 35, 35, 35),
-           color: Colors.blue,
-            child:Row(
-              children: [
-                Text('Gender:',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 228, 64, 64),
-                  fontSize: 20,
-                ),
-                ),
-          
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-            child:(
-              Text('LALAKE AKO',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: const Color.fromARGB(255, 34, 34, 34),
-                fontSize: 20,
-                )
-              )
-            )
-          ),
-         
-              ],
-            ),
-          ),
-        ],
-      ),  
-
-    ),
-  ));
+  runApp(MaterialApp(home: Profile()));
 }
 
+class Profile extends StatelessWidget {
+  const Profile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('bike parts'),
+        backgroundColor: Color.fromARGB(255, 224, 223, 230),
+      ),
+      body: Container(
+        margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+        child: Column(
+          children: [
+            Center(
+              child: Text(
+                'User Profile',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+              ),
+            ),
+            Icon(Icons.account_circle,
+                size: 100, color: Color.fromARGB(255, 171, 133, 133)),
+            Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.fromLTRB(30, 20, 0, 0),
+                  child: Row(
+                    children: [
+                      Container(
+                        child: Text(
+                          'Name:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                        child: Text('Chris Deniel Rivera'),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(30, 10, 0, 0),
+                  child: Row(
+                    children: [
+                      Container(
+                        child: Text(
+                          'Email:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                        child: Text('denielrivera652@gmail.com'),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(30, 10, 0, 0),
+                  child: Row(
+                    children: [
+                      Container(
+                        child: Text(
+                          'Company:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                        child: Text('Batangas State University TNEU Balayan'),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(30, 10, 0, 0),
+                        child: Text(
+                          'Contact Number:',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                        child: Text('09974617733'),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                    child: Column(children: [
+                  Container(
+                    width: 350,
+                    margin: EdgeInsets.fromLTRB(0, 250, 0, 0),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Logout',
+                        style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 203, 40, 40),
+                        ),
+                      ),
+                    ),
+                  ),
+                ]))
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

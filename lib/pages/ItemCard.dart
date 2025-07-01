@@ -40,7 +40,7 @@ class Itemcard extends StatelessWidget {
                 const SizedBox(height: 4), // spacing
                 ElevatedButton(
                   onPressed: () {
-                    // Add your checkout logic here
+                   
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.indigo[900], // navy blue

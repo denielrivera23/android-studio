@@ -41,20 +41,6 @@ class BikeShopHomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
-            color: const Color(0xFF2980B9),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  NavButton(title: 'Home'),
-                  NavButton(title: 'Products'),
-                  NavButton(title: 'Cartss'),
-                ],
-              ),
-            ),
-          ),
           Expanded(
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(16.0),
@@ -102,6 +88,46 @@ class BikeShopHomePage extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.1),
+              spreadRadius: 1,
+              blurRadius: 10,
+              offset: const Offset(0, -1),
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          currentIndex: 0,
+          onTap: (index) {
+            switch (index) {
+              case 0:
+                // Already on home page
+                break;
+              case 1:
+                Navigator.pushNamed(context, '/list');
+                break;
+              case 2:
+                Navigator.pushNamed(context, '/list');
+                break;
+            }
+          },
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
+          ],
+          selectedItemColor: Color(0xFFD32D43),
+          unselectedItemColor: Color(0xFF1A1A1A),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          backgroundColor: Colors.white,
+          type: BottomNavigationBarType.fixed,
+        ),
+      ),
     );
   }
 }
@@ -142,7 +168,7 @@ class ProductCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8),
         side: const BorderSide(color: Color(0xFFE0E0E0)),
-      ), // <-- Fixed parenthesis here
+      ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

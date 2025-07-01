@@ -43,6 +43,14 @@ class ListItemsState extends State<ListItems> {
           },
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/add'); // Navigate to AddParts page
+        },
+        backgroundColor: Color.fromARGB(255, 255, 255, 255), // Opaque color
+        child:  Icon(Icons.add),
+      ),
+
     );
   }
 }
